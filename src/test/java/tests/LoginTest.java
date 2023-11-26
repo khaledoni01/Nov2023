@@ -2,49 +2,44 @@ package tests;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.LoginPage;
+import pages.TestBase;
 
-public class LoginTest {
+import java.util.List;
 
-    public static WebDriver driver = null;
-    public String baseURL = "https://nktechsolutions.com/membership-login/";
-
-    @BeforeMethod
-    public void launchBrowser() {
-        WebDriverManager.firefoxdriver().setup();
-        driver = new FirefoxDriver();
-        driver.get(baseURL);
-    }
-    @AfterMethod
-    public void closeBrowser() {
-        driver.quit();
-    }
-
+public class LoginTest extends TestBase {
 
     @Test
-    public void validUsernameAndPassword() throws InterruptedException {
+    public void validUsernameAndPassword() {
         LoginPage loginPage = new LoginPage();
-        Thread.sleep(5000);
         loginPage.typeUsername("admin");
         loginPage.typePassword("admin");
+        loginPage.clickMenu("Training");
     }
 
     @Test
-    public void invalidUsernameAndValidPassword() throws InterruptedException {
+    public void invalidUsernameAndValidPassword() {
         LoginPage loginPage = new LoginPage();
-        Thread.sleep(5000);
+
+        wait.until(ExpectedConditions.visibilityOf(loginPage.password));
+
         loginPage.typeUsername("invalid");
         loginPage.typePassword("admin");
     }
 
     @Test
-    public void invalidUsernameAndInvalidPassword() throws InterruptedException {
+    public void invalidUsernameAndInvalidPassword() {
         LoginPage loginPage = new LoginPage();
-        Thread.sleep(5000);
+
+        wait.until(ExpectedConditions.visibilityOf(loginPage.username));
+
         loginPage.typeUsername("invalid");
         loginPage.typePassword("invalid");
     }
