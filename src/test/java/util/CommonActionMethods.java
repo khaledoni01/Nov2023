@@ -2,7 +2,7 @@ package util;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
-import pages.TestBase;
+import tests.TestBase;
 
 public class CommonActionMethods {
 

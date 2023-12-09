@@ -1,12 +1,10 @@
 package pages;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import tests.LoginTest;
+import tests.TestBase;
 import util.CommonActionMethods;
 
 import java.util.List;
@@ -26,6 +24,19 @@ public class LoginPage {
     @FindBy(xpath = "//a[@class='menu-link']/span")
     public List<WebElement> menuOptions;
 
+    @FindBy(xpath = "//h1")
+    public WebElement memberLoginPageHeader;
+
+    @FindBy(xpath = "//a[@id='register']")
+    public WebElement joinUsLink;
+
+    public boolean verifyJoinUsLinkIsDisplayed() {
+        return joinUsLink.isDisplayed();
+    }
+
+    public String verifyMemberLoginPageHeader(){
+        return memberLoginPageHeader.getText().trim();
+    }
 
     public void typeUsername(String uname) {
         TestBase.wait.until(ExpectedConditions.visibilityOf(username));

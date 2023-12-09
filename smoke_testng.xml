@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Smoke Test Suite">
+
+    <groups>
+        <run>
+            <include name="smoke"/>
+        </run>
+    </groups>
+
+    <parameter name="baseURL" value="https://nktechsolutions.com/membership-login/" />
+
+    <test name="LTest">
+
+        <classes>
+            <class name="tests.LoginTest" />
+<!--                <methods>-->
+<!--                    <include name="validUsernameAndPassword" />-->
+<!--                </methods>-->
+<!--            </class>-->
+        </classes>
+
+    </test>
+
+<!--    <test name="MTest">-->
+
+<!--        <classes>-->
+<!--            <class name="tests.MiscTest" />-->
+<!--        </classes>-->
+
+<!--    </test>-->
+
+</suite>

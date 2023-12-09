@@ -1,30 +1,44 @@
 package tests;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pages.LoginPage;
-import pages.TestBase;
 
-import java.util.List;
+import java.util.Arrays;
 
 public class LoginTest extends TestBase {
 
-    @Test
-    public void validUsernameAndPassword() {
-        LoginPage loginPage = new LoginPage();
-        loginPage.typeUsername("admin");
-        loginPage.typePassword("admin");
-        loginPage.clickMenu("Training");
+    @DataProvider(name= "validData")
+    public Object[][] getValidData() {
+        return new Object[][] {
+                                {"admin", "admin"},
+//                                {"kz01", "password"},
+//                                {"tech01", "ouei@#"}
+                              };
     }
 
-    @Test
+//    @Test(groups={"regression", "smoke"}, dataProvider = "validData")
+//    public void validUsernameAndPassword(String username, String password) {
+//    LoginPage loginPage = new LoginPage();
+//    loginPage.typeUsername(username);
+//    loginPage.typePassword(password);
+//        loginPage.clickMenu("Training");
+//}
+    @Test(groups={"regression", "smoke"})
+    public void validUsernameAndPassword() {
+        LoginPage loginPage = new LoginPage();
+        loginPage.typeUsername("Admin");
+        loginPage.typePassword("Admin");
+
+        Assert.assertEquals(loginPage.verifyMemberLoginPageHeader(), "Member Log", "Header text is mismatching");
+
+        Assert.assertTrue(loginPage.verifyJoinUsLinkIsDisplayed(), "Link is NOT displayed");
+
+    }
+
+    @Test(groups={"regression"})
     public void invalidUsernameAndValidPassword() {
         LoginPage loginPage = new LoginPage();
 
@@ -34,7 +48,7 @@ public class LoginTest extends TestBase {
         loginPage.typePassword("admin");
     }
 
-    @Test
+    @Test(groups={"regression"})
     public void invalidUsernameAndInvalidPassword() {
         LoginPage loginPage = new LoginPage();
 
