@@ -32,7 +32,7 @@ public class LoginTest extends TestBase {
         loginPage.typeUsername("Admin");
         loginPage.typePassword("Admin");
 
-        Assert.assertEquals(loginPage.verifyMemberLoginPageHeader(), "Member Log", "Header text is mismatching");
+        Assert.assertEquals(loginPage.verifyMemberLoginPageHeader(), "Member Login", "Header text is mismatching");
 
         Assert.assertTrue(loginPage.verifyJoinUsLinkIsDisplayed(), "Link is NOT displayed");
 
