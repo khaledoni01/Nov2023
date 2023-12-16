@@ -1,29 +1,28 @@
-package tests;
+package stepDef;
 
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Parameters;
 
-public class TestBase {
+public class BaseTest {
 
     public static WebDriver driver = null;
     public static WebDriverWait wait = null;
+    public static String baseURL = "https://nktechsolutions.com/membership-login/";
 
-    @BeforeMethod(alwaysRun = true)
-    @Parameters({"baseURL"})
-    public void launchBrowser(String baseURL) {
+    @Before
+    public void launchBrowser() {
         WebDriverManager.firefoxdriver().setup();
         driver = new FirefoxDriver();
-        driver.get(baseURL);
         wait = new WebDriverWait(driver, 15);
     }
-
-    //    @AfterMethod(alwaysRun = true)
+    @After
     public void closeBrowser() {
         driver.quit();
     }
+
 
 }

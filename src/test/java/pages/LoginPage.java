@@ -4,7 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import tests.TestBase;
+import stepDef.BaseTest;
 import util.CommonActionMethods;
 
 import java.util.List;
@@ -12,7 +12,7 @@ import java.util.List;
 public class LoginPage {
 
     public LoginPage() {
-        PageFactory.initElements(TestBase.driver, this);
+        PageFactory.initElements(BaseTest.driver, this);
     }
 
     @FindBy(xpath = "//input[@name='swpm_user_name']")
@@ -39,7 +39,7 @@ public class LoginPage {
     }
 
     public void typeUsername(String uname) {
-        TestBase.wait.until(ExpectedConditions.visibilityOf(username));
+        BaseTest.wait.until(ExpectedConditions.visibilityOf(username));
         CommonActionMethods.type(username, uname);
     }
 
@@ -53,7 +53,7 @@ public class LoginPage {
             String menuText = m.getText();
 
             if(menuText.equals(userMenu)) {
-                TestBase.wait.until(ExpectedConditions.elementToBeClickable(m));
+                BaseTest.wait.until(ExpectedConditions.elementToBeClickable(m));
 
                 CommonActionMethods.jsClick(m);
 //                m.click();

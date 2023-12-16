@@ -7,12 +7,13 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import stepDef.BaseTest;
 import tests.TestBase;
 
 public class MiscPage {
 
     public MiscPage() {
-        PageFactory.initElements(TestBase.driver, this);
+        PageFactory.initElements(BaseTest.driver, this);
     }
 
     @FindBy(xpath = "//select[@id='month']")
@@ -25,14 +26,14 @@ public class MiscPage {
 
 
     public void actionMethod() {
-        TestBase.wait.until(ExpectedConditions.visibilityOf(hoverOverDropdown));
+        BaseTest.wait.until(ExpectedConditions.visibilityOf(hoverOverDropdown));
 
-        Actions act = new Actions(TestBase.driver);
+        Actions act = new Actions(BaseTest.driver);
         act.moveToElement(hoverOverDropdown).build().perform();
     }
 
     public void chooseDropdownOption(String month) {
-        TestBase.wait.until(ExpectedConditions.visibilityOf(monthDropdown));
+        BaseTest.wait.until(ExpectedConditions.visibilityOf(monthDropdown));
         Select select = new Select(monthDropdown);
         select.selectByVisibleText(month);
     }
@@ -46,7 +47,7 @@ public class MiscPage {
             throw new RuntimeException(e);
         }
 
-        Alert a = TestBase.driver.switchTo().alert();
+        Alert a = BaseTest.driver.switchTo().alert();
         a.accept();
     }
 
