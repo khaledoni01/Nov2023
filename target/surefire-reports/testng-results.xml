@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-12-17T15:23:15Z" name="Smoke Test Suite" finished-at="2023-12-17T15:23:39Z" duration-ms="23561">
+    <groups>
+      <group name="cucumber">
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleEventWrapper, io.cucumber.testng.CucumberFeatureWrapper)[pri:0, instance:cucumberRunner.RunnerTest@17f62e33]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+      </group> <!-- cucumber -->
+    </groups>
+    <test started-at="2023-12-17T15:23:15Z" name="LTest" finished-at="2023-12-17T15:23:39Z" duration-ms="23561">
+      <class name="cucumberRunner.RunnerTest">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:cucumberRunner.RunnerTest@17f62e33]" started-at="2023-12-17T15:23:15Z" name="setUpClass" finished-at="2023-12-17T15:23:15Z" duration-ms="58" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleEventWrapper, io.cucumber.testng.CucumberFeatureWrapper)[pri:0, instance:cucumberRunner.RunnerTest@17f62e33]" started-at="2023-12-17T15:23:16Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-12-17T15:23:25Z" duration-ms="9010" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify NK login"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Verify NK login functionality"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleEventWrapper, io.cucumber.testng.CucumberFeatureWrapper)[pri:0, instance:cucumberRunner.RunnerTest@17f62e33]" started-at="2023-12-17T15:23:25Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-12-17T15:23:32Z" duration-ms="7153" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify NK login 2"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Verify NK login functionality"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleEventWrapper, io.cucumber.testng.CucumberFeatureWrapper)[pri:0, instance:cucumberRunner.RunnerTest@17f62e33]" started-at="2023-12-17T15:23:32Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-12-17T15:23:39Z" duration-ms="7234" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify NK login 2"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Verify NK login functionality"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:cucumberRunner.RunnerTest@17f62e33]" started-at="2023-12-17T15:23:39Z" name="tearDownClass" finished-at="2023-12-17T15:23:39Z" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- cucumberRunner.RunnerTest -->
+    </test> <!-- LTest -->
+  </suite> <!-- Smoke Test Suite -->
+</testng-results>

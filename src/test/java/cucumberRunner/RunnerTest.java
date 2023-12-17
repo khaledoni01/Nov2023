@@ -8,7 +8,7 @@ import io.cucumber.testng.CucumberOptions;
         features = {"src/test/resources/"},
         glue = {"stepDef"}
 )
-public class Runner extends AbstractTestNGCucumberTests {
+public class RunnerTest extends AbstractTestNGCucumberTests {
 
 
 }
